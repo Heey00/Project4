@@ -100,4 +100,4 @@ if __name__ == '__main__':
     parser.add_argument("test_df", type=str, help="Path to test_df")
     parser.add_argument("dest_path", type=str, help="Path to test_df")
     args = parser.parse_args()
-    build_test_model(args.train_df, args.test_df)
+    build_test_model(args.train_df, args.test_df, args.dest_path)
