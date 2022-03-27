@@ -85,18 +85,19 @@ def build_test_model(train_df, test_df):
     report = classification_report(y_test, pipe_knn_tuned.predict(X_test), 
                                    output_dict=True, target_names=["benign", "malignant"])
     report = pd.DataFrame(report).transpose()
-    report.to_csv('../results/classification_report.csv')
+    report.to_csv(dest_path + "classification_report.csv")
 
     #confusion matrix 
     cm = confusion_matrix(y_test, pipe_knn_tuned.predict(X_test), labels=pipe_knn_tuned.classes_)
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=pipe_knn_tuned.classes_)
     disp.plot()
-    plt.savefig("../results/confusion_matrix.png")
+    plt.savefig(dest_path + "confusion_matrix.png")
     
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Build and test model")
     parser.add_argument("train_df", type=str, help="Path to train_df")
     parser.add_argument("test_df", type=str, help="Path to test_df")
+    parser.add_argument("dest_path", type=str, help="Path to test_df")
     args = parser.parse_args()
     build_test_model(args.train_df, args.test_df)
