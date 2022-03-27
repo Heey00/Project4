@@ -73,7 +73,7 @@ def build_test_model(train_df, test_df, dest_path):
     tuned_para = tuned_para.rename(columns = {0:"Value"})
     tuned_para = tuned_para.T
     tuned_para['knn_best_score'] = best_score
-    tuned_para.to_csv('../results/tuned_parameters.csv')
+    tuned_para.to_csv(dest_path + "tuned_parameters.csv')
 
     #model on test set 
     pipe_knn_tuned = make_pipeline(ct,KNeighborsClassifier(
