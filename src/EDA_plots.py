@@ -18,11 +18,11 @@ def EDA_plot(train_df, hist_output, boxplot_output):
     plot_hist_overlay(df0=benign_cases, df1=malignant_cases,
                  columns=numeric_looking_columns, labels=["0 - benign", "1 - malignant"],
                  fig_no="1")
-    plt.savefig(dest_path + "hist_output") #added dest_path
+    plt.savefig(hist_output) #changed arg
     
     #plot boxplot 
     boxplot_plotting(3, 3, 20, 25, numeric_looking_columns, train_df, 2)
-    plt.savefig(dest_path + "boxplot_output")) #added dest_path
+    plt.savefig(boxplot_output) #changed arg
 
 
 if __name__ == '__main__':
