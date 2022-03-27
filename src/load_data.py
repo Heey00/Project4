@@ -7,8 +7,8 @@ def load_data(src_path, dest_path):
     col_names = ["id", "clump", "unif_size", "unif_shape", "adhesion",
                  "epi_size", "nuclei", "chromatin", "nucleoli",
                  "mitoses", "class"]
-    dataset = pd.read_csv(path, names=col_names, sep=",")
-    dataset.to_csv('../data/raw/breast_cancer_loaded.csv') #deleted return 
+    dataset = pd.read_csv(src_path, names=col_names, sep=",")
+    dataset.to_csv(dest_path) #deleted return 
 
 
 if __name__ == '__main__':
