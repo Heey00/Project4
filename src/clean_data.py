@@ -20,6 +20,7 @@ def clean_data(dataset):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Clean data")
+    parser.add_argument(dataset, type=str, help="Path to dataset") #changed
     parser.add_argument(train_df, type=str, help="Path to dataset") #changed
     parser.add_argument(test_df, type=str, help="Path to dataset") #changed
     args = parser.parse_args()
