@@ -3,7 +3,7 @@ import pandas as pd
 import argparse
 
 
-def clean_data(dataset):
+def clean_data(dataset, train_df, test_df):
     #cleaning data
     df = pd.read_csv(dataset)
     df = df[(df != '?').all(axis=1)]
@@ -24,4 +24,4 @@ if __name__ == '__main__':
     parser.add_argument(train_df, type=str, help="Path to dataset") #changed
     parser.add_argument(test_df, type=str, help="Path to dataset") #changed
     args = parser.parse_args()
-    clean_data(args.dataset)
+    clean_data(args.dataset, train_df, test_df)
