@@ -13,7 +13,7 @@ def load_data(path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Load data")
-    parser.add_argument("path", type=str, help="Path to data source")
+    parser.add_argument("src_path", type=str, help="Path to data source") #need two arguments
     args = parser.parse_args()
     load_data(args.path)
 
