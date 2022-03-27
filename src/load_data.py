@@ -3,7 +3,7 @@ import pandas as pd
 
 ## Load data from data directory and adds column names. Remove "col_names" code if data has column names
 
-def load_data(path):
+def load_data(src_path, dest_path):
     col_names = ["id", "clump", "unif_size", "unif_shape", "adhesion",
                  "epi_size", "nuclei", "chromatin", "nucleoli",
                  "mitoses", "class"]
