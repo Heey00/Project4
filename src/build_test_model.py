@@ -28,7 +28,7 @@ scoring = [
 results = {}
 
 
-def build_test_model(train_df, test_df):
+def build_test_model(train_df, test_df, dest_path):
     train_df = pd.read_csv(train_df) 
     test_df = pd.read_csv(test_df)
     X_train = train_df.drop(columns=["class"])
