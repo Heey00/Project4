@@ -24,4 +24,4 @@ if __name__ == '__main__':
     parser.add_argument(train_df, type=str, help="Path to dataset") #changed
     parser.add_argument(test_df, type=str, help="Path to dataset") #changed
     args = parser.parse_args()
-    clean_data(args.dataset, train_df, test_df)
+    clean_data(args.dataset, args.train_df, args.test_df)
