@@ -26,7 +26,7 @@ def EDA_plot(train_df, hist_output, boxplot_output):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Plots EDA")
     parser.add_argument("train_df", help="Path to train_df")
-    parser.add_argument("hist_output", help="Path to histogram output")
-    parser.add_argument("boxplot_output", help="Path to boxplot output")
+    parser.add_argument(dest_path + "hist_output", help="Path to histogram output")
+    parser.add_argument(dest_path + "boxplot_output", help="Path to boxplot output")
     args = parser.parse_args()
     EDA_plot(args.train_df, args.hist_output, args.boxplot_output)
