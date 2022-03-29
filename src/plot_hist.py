@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def plot_hist_overlay(df0, df1, column, labels, fig_no="1",alpha=0.7, bins=5, **kwargs):
+def plot_hist_overlay(df0, df1, columns, labels, fig_no="1",alpha=0.7, bins=5, **kwargs):
     """
     A function that plot histogram for a target
     classification label against each numerical features.
