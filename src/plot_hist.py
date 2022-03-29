@@ -40,7 +40,7 @@ def plot_hist_overlay(df0, df1, column, labels, fig_no="1",alpha=0.7, bins=5, **
     plot_hist_overlay(benign_cases, malignant_cases,"unif_size", labels=["0 - benign", "1 - malignant"]
     
     """
-    column_name = column.title().replace("_", " ")
+"""    column_name = column.title().replace("_", " ")
     fig, ax = plt.subplots()
     ax.hist(df0[column], alpha=alpha, bins=bins, label=labels[0], **kwargs, figure=fig)
     ax.hist(df1[column], alpha=alpha, bins=bins, label=labels[1], **kwargs, figure=fig)
@@ -49,3 +49,23 @@ def plot_hist_overlay(df0, df1, column, labels, fig_no="1",alpha=0.7, bins=5, **
     ax.set_ylabel("Count")
     ax.set_title(f"Figure {fig_no}: Histogram of {column_name} for each target class label")
     return ax
+"""
+
+ # To automatically calculating the size of dimension of the figures (Square shape)
+    size = len(columns)
+    dim = np.ceil(np.sqrt([size])).astype(int)[0]
+    fig = plt.figure(1, figsize=(22,22))
+
+    for idx, x in enumerate(columns):
+        subplot=plt.subplot(dim, dim, idx+1)
+        col_name = x.title().replace("_", " ")
+        subplot.hist(df0[x], alpha=alpha, bins=bins, label=labels[0], **kwargs)
+        subplot.hist(df1[x], alpha=alpha, bins=bins, label=labels[1], **kwargs)
+        subplot.legend(loc="upper right")
+        subplot.set_xlabel(col_name, fontsize=14)
+        subplot.set_ylabel("Count", fontsize=14)
+        subplot.set_title(f"Figure {fig_no}.{idx+1}: Histogram of {col_name} for each target class label", 
+                          fontsize=14)
+    fig.suptitle(f"Figure {fig_no}: Distribution of the target class for each numeric feature", fontsize=20)
+
+    return fig
